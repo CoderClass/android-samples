@@ -5,9 +5,10 @@ Twitter Sample Android Apps
 
 We store variables in a file called Constants.java within the src folder. This file will be as follows:
 
-package com.twitterdev.hello_world.app;
+
 
 ```
+package com.twitterdev.hello_world.app;
 /**
  * Created by @gpj
  */
