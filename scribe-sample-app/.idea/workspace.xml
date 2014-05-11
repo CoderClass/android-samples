@@ -87,7 +87,7 @@
       <file leaf-file-name="Constants.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/twitterdev/hello_world/app/Constants.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="386" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="483">
+            <state line="7" column="95" selection-start="264" selection-end="264" vertical-scroll-proportion="0.2173913" vertical-offset="0" max-vertical-offset="483">
               <folding />
             </state>
           </provider>
@@ -766,6 +766,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
+    <option name="x" value="-30" />
     <option name="y" value="22" />
     <option name="width" value="1440" />
     <option name="height" value="878" />
@@ -1048,7 +1049,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1440" height="878" extended-state="0" />
+    <frame x="-30" y="22" width="1440" height="878" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -1106,7 +1107,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/twitterdev/hello_world/app/Constants.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="386" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="483">
+        <state line="7" column="95" selection-start="264" selection-end="264" vertical-scroll-proportion="0.2173913" vertical-offset="0" max-vertical-offset="483">
           <folding />
         </state>
       </provider>
