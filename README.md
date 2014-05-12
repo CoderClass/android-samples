@@ -7,6 +7,10 @@ Twitter Sample Android Apps
  
 ![](https://raw.githubusercontent.com/twitterdev/android-samples/master/scribe-sample-app/screenshots/tweets.png)
 
+![](https://raw.githubusercontent.com/twitterdev/android-samples/master/twitter4j-sample-app/screenshots/login.png)
+ 
+![](https://raw.githubusercontent.com/twitterdev/android-samples/master/twitter4j-sample-app/screenshots/latest_tweet.png)
+
 
 We store variables in a file called Constants.java within the src folder. This file will be as follows:
 
