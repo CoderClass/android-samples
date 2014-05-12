@@ -142,10 +142,17 @@ public class LoggedIn extends ActionBarActivity {
             public boolean onQueryTextSubmit(String query) {
                 // TODO Auto-generated method stub
                 Log.v("search", query);
+                searchView.setIconified(true);
+                searchView.clearFocus();
+                searchView.setQuery("", false);
                 new getUser().execute(query);
+
+
+                // This method does not exist
                 searchView.setIconified(true);
                 return false;
             }
+
 
             @Override
             public boolean onQueryTextChange(String newText) {
