@@ -1,7 +1,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.twitterdev.twitter4j_sample_app.app.MainActivity" >
+    xmlns:app="http://schemas.android.com/apk/res-auto" >
+
+    <item android:id="@+id/search_icon"
+        android:icon="@drawable/search"
+        android:title="Search"
+        app:showAsAction="ifRoom"
+        android:showAsAction="always"
+        app:actionViewClass="android.widget.SearchView"
+
+        />
+
 
     <item android:id="@+id/refresh"
         android:title="Refresh"
@@ -12,4 +20,5 @@
         android:title="Sign Out"
         android:orderInCategory="100"
         app:showAsAction="never" />
+
 </menu>

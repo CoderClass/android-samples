@@ -1,7 +1,15 @@
 package com.twitterdev.twitter4j_sample_app.app;
 
+import android.app.SearchManager;
+import android.content.Context;
 import android.os.AsyncTask;
+import android.os.Build;
+import android.os.Handler;
+
+import android.support.v4.view.MenuItemCompat;
 import android.view.Menu;
+
+import android.view.MenuInflater;
 import android.view.MenuItem;
 
 /**
@@ -20,8 +28,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+
+import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -42,6 +53,7 @@ public class LoggedIn extends ActionBarActivity {
     private static RequestToken requestToken;
     private AccessToken accessToken;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,6 +70,8 @@ public class LoggedIn extends ActionBarActivity {
         Log.v("LoggedIn", "getUser().execute(<String>);");
         // process getting a user @<:handle>
         new getUser().execute("twitterdev");
+
+
     }
 
     private class getUser extends AsyncTask<String, Void, String> {
@@ -98,24 +112,62 @@ public class LoggedIn extends ActionBarActivity {
                         TextView lt = (TextView) findViewById(R.id.last_tweet);
                         lt.setText(last_tweet);
                         TextView h = (TextView) findViewById(R.id.handleId);
-                        h.setText(twitter_handle);
+                        h.setText("@" + twitter_handle);
+
                     }
                 });
                 //Log.v("Last Tweet", s.getText());
             } catch (TwitterException e) {
+                Toast.makeText(getApplicationContext(), "Oops something bad happened...", Toast.LENGTH_SHORT).show();
                 e.printStackTrace();
             }
             return null;
         }
     }
 
+
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        //Used to put dark icons on light action bar
+        final Menu m = menu;
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main, menu);
+        final MenuItem searchItem = menu.findItem(R.id.search_icon);
+        final SearchView searchView = (SearchView) searchItem.getActionView();
+        //searchView.setSubmitButtonEnabled(true);
+        assert searchView != null;
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                // TODO Auto-generated method stub
+                Log.v("search", query);
+                new getUser().execute(query);
+                searchView.setIconified(true);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                // TODO Auto-generated method stub
+
+                return false;
+            }
+
+        });
+        return super.onCreateOptionsMenu(menu);
+
+
+    }
+
+
+    /*@Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
-    }
+    }*/
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
